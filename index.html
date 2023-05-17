@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex Final - Consumindo uma API</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    
+    <main>
+        <h1 class="title">Personal Finances</h1>
+
+        <section class="balance">
+            <h2 class="balance-container-title">Balance</h2>
+            <span class="balance-value-container">$<span class="balance-value">00.00</span></span>
+        </section>
+
+        <section class="forms">
+
+            <nav class="forms-navbar">
+                <ul>
+                    <li class="form-navbar-btn active">New Transaction</li>
+                    <li class="form-navbar-btn">Edit Transaction</li>
+                    <li class="form-navbar-btn">Delete Transaction</li>
+                </ul>
+            </nav>
+
+            <form class="transaction-form active">
+                <input type="text" name="transactionName" id="transactionName" placeholder="Transaction Name">
+                <input type="number" name="transactionValue" id="transactionValue" placeholder="Transaction Value" step=".01">
+                <button class="form-btn">Add Transaction</button>
+            </form>
+        </section>
+
+        <section class="transactions-container" id="transactionsContainer">
+
+            <h2 class="transactions-container-title">Transactions</h2>
+
+            <div class="transactions-list">
+                
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

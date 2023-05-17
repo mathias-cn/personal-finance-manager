@@ -1,0 +1,22 @@
+{
+  "transactions": [
+    {
+      "name": "Freela",
+      "value": 120,
+      "action": 1,
+      "id": 3
+    },
+    {
+      "name": "Mercado",
+      "value": 400,
+      "action": 0,
+      "id": 4
+    },
+    {
+      "name": "AAA",
+      "value": 123,
+      "action": 1,
+      "id": 5
+    }
+  ]
+}
