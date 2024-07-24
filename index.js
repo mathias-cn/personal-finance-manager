@@ -42,13 +42,13 @@ function totalBalance(transactions) {
 }
 
 async function updateBalance() {
-    const transactions = await fetch('/transactions').then(res => res.json())
+    const transactions = await fetch(`${window.location.href}transactions`).then(res => res.json())
     
     document.querySelector('.balance-value').textContent = totalBalance(transactions).toFixed(2)
 }
 
 async function fetchTransactions() {
-    const transactions = await fetch('/transactions').then(res => res.json())
+    const transactions = await fetch(`${window.location.href}transactions`).then(res => res.json())
     transactions.forEach(renderTransactions)
     
     document.querySelector('.balance-value').textContent = totalBalance(transactions).toFixed(2)
@@ -131,7 +131,7 @@ form.addEventListener('submit', async (ev) => {
             newTransactionData.value = Number(newTransactionData.value)
             newTransactionData.action = 1
         }
-        const response = await fetch('/transactions', {
+        const response = await fetch(`${window.location.href}transactions`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
