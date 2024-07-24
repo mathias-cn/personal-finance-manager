@@ -42,13 +42,13 @@ function totalBalance(transactions) {
 }
 
 async function updateBalance() {
-    const transactions = await fetch('http://localhost:3000/transactions').then(res => res.json())
+    const transactions = await fetch('/transactions').then(res => res.json())
     
     document.querySelector('.balance-value').textContent = totalBalance(transactions).toFixed(2)
 }
 
 async function fetchTransactions() {
-    const transactions = await fetch('http://localhost:3000/transactions').then(res => res.json())
+    const transactions = await fetch('/transactions').then(res => res.json())
     transactions.forEach(renderTransactions)
     
     document.querySelector('.balance-value').textContent = totalBalance(transactions).toFixed(2)
@@ -131,7 +131,7 @@ form.addEventListener('submit', async (ev) => {
             newTransactionData.value = Number(newTransactionData.value)
             newTransactionData.action = 1
         }
-        const response = await fetch('http://localhost:3000/transactions', {
+        const response = await fetch('/transactions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ form.addEventListener('submit', async (ev) => {
         updateBalance()
     } else if (activeIndex == 2) {
         const deleteTransaction = Number(document.querySelector('#deleteId').value)
-        const response = await fetch(`http://localhost:3000/transactions/${deleteTransaction}`, {
+        const response = await fetch(`/transactions/${deleteTransaction}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -168,7 +168,7 @@ form.addEventListener('submit', async (ev) => {
             editTransaction.value = Number(editTransaction.value)
             editTransaction.action = 1
         }
-        const response = await fetch(`http://localhost:3000/transactions/${editId}`, {
+        const response = await fetch(`/transactions/${editId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
